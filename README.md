@@ -5,3 +5,5 @@ Features:<br>
    live changes<br>
    search any movie<br>
 Api: www.themoviedb.org<br>
+![WhatsApp Video 2022-02-14 at 2 03 09 PM](https://user-images.githubusercontent.com/65595381/153833132-b32b6e70-6e50-48bf-898c-4db78bcc197b.gif)
+
