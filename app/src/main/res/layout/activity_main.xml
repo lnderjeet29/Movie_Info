@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cumstom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:title="Movie Info"
+        app:titleTextColor="@color/white"
+        app:menu="@menu/menu"
+        style="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="25dp"
+        android:indeterminate="true"
+        android:indeterminateBehavior="cycle"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:trackColor="@color/black" />
+
+    <TextView
+        android:id="@+id/network_notification"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/cumstom_toolbar"
+        android:background="#373434"
+        android:gravity="center"
+        android:text="No Internet connection"
+        android:textColor="#AE0808"
+        android:elevation="30dp"
+        android:visibility="gone" />
+
+    <fragment
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cumstom_toolbar"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav" />
+</RelativeLayout>

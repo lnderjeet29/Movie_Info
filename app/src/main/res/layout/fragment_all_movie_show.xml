@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllMovieShow">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient2">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressbar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:visibility="gone"
+            app:indicatorColor="@color/white"
+            app:trackColor="@color/black" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/img_container"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="20dp">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/placeholder"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_period="1000" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_container"
+            android:layout_marginTop="20dp"
+            android:text="Trending movies >>>"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_Trending"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_container"
+            android:layout_marginTop="50dp"
+            android:background="#65F4EFEF"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/fragment_recycler_view_item" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rc_Trending"
+            android:layout_marginTop="20dp"
+            android:text="Upcoming movies >>>"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_popular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rc_Trending"
+            android:layout_marginTop="50dp"
+            android:background="#65F4EFEF"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/fragment_recycler_view_item" />
+
+        <TextView
+            android:id="@+id/txt_caursor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rc_popular"
+            android:layout_marginTop="10dp"
+            android:background="#3CDFD9D9"
+            android:fontFamily="serif-monospace"
+            android:gravity="center_horizontal"
+            android:text="Most rated movies"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/txt_caursor"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/placeholder"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_period="1000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_slider2"
+            android:layout_marginTop="20dp"
+            android:text="Popular series >>>"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_most_rated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_slider2"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="#65F4EFEF"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/fragment_recycler_view_item" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
